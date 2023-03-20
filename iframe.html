@@ -1,0 +1,38 @@
+<a href="imtokenv2://wc?uri=wc%3A5ceafa64-304a-4f25-b182-4601d1702075%401%3Fbridge%3Dhttps%253A%252F%252Fv.bridge.walletconnect.org%26key%3D4eeb4d874eaefe25c38da04421498d3831cf645e94f4fa62111cb7175ba5bab9" target="_blank">Open App in iframe</a><br>
+
+<script type="text/javascript">
+  function interceptClick(e) {
+    // // iOS only
+    // if ('iOS' !== detectOS(navigator.userAgent)) {
+    //   return;
+    // }
+
+    // // the click target or parent need to be an anchor tag
+    // let linkEle;
+    // if (e.target?.tagName === 'A') {
+    //   linkEle = e.target;
+    // } else if (e.target?.parentElement?.tagName === 'A') {
+    //   linkEle = e.target.parentElement;
+    // } else {
+    //   return;
+    // }
+
+    // // the anchor tag need to have a aw universal link
+    // const uri = linkEle.href;
+    // if (!uri.startsWith('https://aw.app/')) {
+    //   return;
+    // }
+
+    // const nativeLink = uri.replace('https://aw.app/', 'awallet://');
+    // window.open(nativeLink, "_blank");
+    // e.preventDefault();
+
+    console.log('caught')
+
+    window.top.open(e.target.href, "_blank");
+
+    e.preventDefault();
+  }
+
+  document.addEventListener('click', interceptClick);
+</script>
